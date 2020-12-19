@@ -29,8 +29,10 @@
 
 
 #include "Arduino.h"
-#include "dht.h"
 
+#if defined (__AVR__)
+
+#include "dht.h"
 
 
 unittest_setup()
@@ -46,6 +48,8 @@ unittest(test_constructor)
 {
   assertEqual(1, 1);
 }
+
+#endif
 
 unittest_main()
 
