@@ -30,10 +30,9 @@
 
 #include "Arduino.h"
 
-#if defined (__AVR__)
+#if defined (ARDUINO_ARCH_AVR)
 
 #include "dht.h"
-
 
 unittest_setup()
 {
@@ -42,7 +41,6 @@ unittest_setup()
 unittest_teardown()
 {
 }
-
 
 unittest(test_constructor)
 {
