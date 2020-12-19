@@ -47,8 +47,10 @@ unittest(test_constructor)
   assertEqual(1, 1);
 }
 
-#endif
+
 
 unittest_main()
+
+#endif
 
 // --------
