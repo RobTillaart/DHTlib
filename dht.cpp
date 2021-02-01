@@ -114,8 +114,8 @@ int8_t dht::read(uint8_t pin)
     bits[2] &= 0x83;
 
     // CONVERT AND STORE
-    humidity    = (_bits[0] * 256 + _bits[1]) * 0.1;
-    int16_t t   = (_bits[2] * 256 + _bits[3]);
+    humidity    = (bits[0] * 256 + bits[1]) * 0.1;
+    int16_t t   = (bits[2] * 256 + bits[3]);
     temperature = t * 0.1;
 
     // HEXDUMP DEBUG
