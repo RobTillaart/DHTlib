@@ -117,7 +117,7 @@ int8_t dht::read(uint8_t pin)
 
     // CONVERT AND STORE
     humidity  = (bits[0] * 256 + bits[1]) * 0.1;
-    int16_t t = ((_bits[2] & 0x7F) * 256 + _bits[3]);
+    int16_t t = ((bits[2] & 0x7F) * 256 + bits[3]);
     if (t == 0)
     {
       temperature = 0.0;     // prevent -0.0;
@@ -125,7 +125,7 @@ int8_t dht::read(uint8_t pin)
     else
     {
       temperature = t * 0.1;
-      if((_bits[2] & 0x80) == 0x80 )
+      if((bits[2] & 0x80) == 0x80 )
       {
         temperature = -temperature;
       }
